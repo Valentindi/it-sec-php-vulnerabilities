@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <head>XSS Input field</head>
+
+</head>
+<body>
+<title>Cross Side Scripting (XSS)</title>
+
+<form method="get" rel="search" action="XSS1-secure.php" style="font-size: 50px">
+    <label for="search">Suchen: </label>
+    <input id="search" name="parameter" style="font-size: 50px">
+    <button type="submit"  style="font-size: 50px">Suche!</button>
+</form>
+
+<br/>
+<a href="XSS.html">XSS</a>
+<br><br><textarea style="width: 500px; height: 300px">
+    <script> alert("Sie wurden gehackt");</script>
+
+    ';alert(String.fromCharCode(88,83,83))//';alert(String.fromCharCode(88,83,83))//";
+alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//--
+></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
+
+</textarea>
+
+
+
+<a href="https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet#XSS_Locator_.28short.29">mehr XSS</a>
+
+</body>
+</html>

