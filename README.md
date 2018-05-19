@@ -7,4 +7,4 @@ Some Examples for XSS, SQL Injection, Code Injection etc.
 
 ## Run
 
-`php -s <hostname>:<port>`
+`php -S <hostname>:<port>`
